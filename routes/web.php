@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SFTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test/elements', [SFTestController::class, 'lookup_frontend_modules']);
+Route::get('/test/elements/{module}', [SFTestController::class, 'lookup_specific_module']);
