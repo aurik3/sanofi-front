@@ -14,9 +14,13 @@ use App\Http\Controllers\SFTestController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/test/elements', [SFTestController::class, 'lookup_frontend_modules']);
 Route::get('/test/elements/{module}', [SFTestController::class, 'lookup_specific_module']);
+
+Route::get('/', function () {
+   return view('home');
+}) -> name('home');
+
+Route::get('/login', function () {
+    return view('login');
+});
