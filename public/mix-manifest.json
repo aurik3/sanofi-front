@@ -1,6 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/img/prog1.svg": "/img/prog1.svg",
+    "/img/prog2.svg": "/img/prog2.svg",
+    "/img/prog3.svg": "/img/prog3.svg",
+    "/img/prog4.svg": "/img/prog4.svg",
+    "/img/prog5.svg": "/img/prog5.svg",
     "/img/sanofi-color.svg": "/img/sanofi-color.svg",
     "/img/sanofi-white.svg": "/img/sanofi-white.svg"
 }
