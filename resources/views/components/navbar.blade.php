@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="{{ route('home') }}">
+    <a class="navbar-brand" href="{{ route('landing') }}">
         <img class="nav-logo" src="{{ asset('img/sanofi-color.svg') }}" alt="Sanofi" />
     </a>
     @if(empty($__env->yieldContent('hide_login')))
