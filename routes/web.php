@@ -18,7 +18,11 @@ Route::get('/test/elements', [SFTestController::class, 'lookup_frontend_modules'
 Route::get('/test/elements/{module}', [SFTestController::class, 'lookup_specific_module']);
 
 Route::get('/', function () {
-   return view('home');
+   return view('landing');
+}) -> name('landing');
+
+Route::get('/home', function () {
+    return view('home');
 }) -> name('home');
 
 Route::get('/login', function () {
