@@ -10905,6 +10905,11 @@ a.text-dark:focus {
   padding-top: 1vh;
 }
 
+.brand-logo {
+  height: 7vh;
+  padding: 1vh 1vw 1vh 1vw;
+}
+
 .btn-login {
   height: 5vh;
   font-size: large;
@@ -10919,6 +10924,14 @@ a.text-dark:focus {
 
 .text-purple {
   color: #591C98 !important;
+}
+
+.text-yellow {
+  color: #d0770f !important;
+}
+
+.text-pink {
+  color: #c00e62 !important;
 }
 
 .login-container h1 {
@@ -10964,6 +10977,12 @@ a.text-dark:focus {
   padding: 0 0 0 0;
 }
 
+.page-container {
+  margin: 10vh 0 2vh 0 !important;
+  padding: 0 0 0 0 !important;
+  height: 100%;
+}
+
 .custom-control-input-purple:focus ~ .custom-control-label::before {
   border-color: #591C98 !important;
   box-shadow: 0 0 0 0.2rem #41156e !important;
@@ -10987,13 +11006,70 @@ a.text-dark:focus {
   color: #fff;
   background-color: #591C98;
   border-color: #591C98;
-  border-radius: 20px;
+  border-bottom: #591C98 solid 3px;
 }
 
 .btn-purple:hover {
+  color: #591C98;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-bottom: #591C98 solid 3px;
+}
+
+.btn-pink {
   color: #fff;
-  background-color: #7d28d4;
-  border-color: #7d28d4;
+  background-color: #c00e62;
+  border-color: #c00e62;
+  border-bottom: #c00e62 solid 3px;
+}
+
+.btn-pink:hover {
+  color: #c00e62;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-bottom: #c00e62 solid 3px;
+}
+
+.btn-yellow {
+  color: #fff;
+  background-color: #d0770f;
+  border-color: #d0770f;
+  border-bottom: #d0770f solid 3px;
+}
+
+.btn-yellow:hover {
+  color: #d0770f;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-bottom: #d0770f solid 3px;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #46569b;
+  border-color: #46569b;
+  border-bottom: #46569b solid 3px;
+}
+
+.btn-blue:hover {
+  color: #46569b;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-bottom: #46569b solid 3px;
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #02857b;
+  border-color: #02857b;
+  border-bottom: #02857b solid 3px;
+}
+
+.btn-green:hover {
+  color: #02857b;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-bottom: #02857b solid 3px;
 }
 
 .login-container button {
@@ -11057,5 +11133,28 @@ body {
 
 .footer input {
   width: 100%;
+}
+
+.descriptor {
+  background-color: #fbf2ed;
+  text-align: center;
+  justify-content: center;
+}
+
+.brand-list {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.program-button {
+  transition: transform 0.2s;
+}
+
+.program-button:hover {
+  transform: scale(1.1);
+}
+
+.btn-bar a {
+  border-radius: 0 !important;
 }
 
