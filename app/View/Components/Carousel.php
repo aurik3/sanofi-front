@@ -17,8 +17,11 @@ class Carousel extends Component
      */
     public function __construct()
     {
-        $this -> images = [];
-        $this -> captions = [];
+        $this -> images = [asset('img/hslid1.jpg'), asset('img/hslid2.jpg')];
+        $this -> captions = [
+            '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>',
+            '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>'
+        ];
     }
 
     /**

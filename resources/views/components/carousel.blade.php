@@ -8,7 +8,7 @@
         @for($i = 0; $i < count($images); $i++)
             <div class="carousel-item @if($i == 0) active @endif">
                 <img class="d-block w-100" src="{{ $images[$i] }}" alt="Slide" />
-                <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block snf-caption">
                     {!! $captions[$i] !!}
                 </div>
             </div>
