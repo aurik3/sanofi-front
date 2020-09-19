@@ -10900,13 +10900,12 @@ a.text-dark:focus {
 }
 
 .nav-logo {
-  height: 5vh;
-  padding-left: 2vw;
-  padding-top: 1vh;
+  height: 5.5vh;
+  padding: 1vh 0 1vh 2vw;
 }
 
 .brand-logo {
-  height: 7vh;
+  height: 6vh;
   padding: 1vh 1vw 1vh 1vw;
 }
 
@@ -10932,6 +10931,10 @@ a.text-dark:focus {
 
 .text-pink {
   color: #c00e62 !important;
+}
+
+.text-black {
+  color: black !important;
 }
 
 .login-container h1 {
@@ -10978,7 +10981,7 @@ a.text-dark:focus {
 }
 
 .page-container {
-  margin: 10vh 0 2vh 0 !important;
+  margin: 7vh 0 2vh 0 !important;
   padding: 0 0 0 0 !important;
   height: 100%;
 }
@@ -11144,6 +11147,63 @@ body {
 .brand-list {
   text-align: center !important;
   justify-content: center !important;
+  margin-top: 5vh !important;
+  margin-bottom: 3.5vh !important;
+}
+
+.feel-container {
+  margin-bottom: 3.5vh !important;
+  text-align: center !important;
+}
+
+.feel-container .card-title {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 1.5vh 1vw 1.5vh 1vw !important;
+  font-weight: bold;
+}
+
+.feel-container .purple-card .card-title {
+  background-color: #591C98;
+  color: #FFFFFF;
+}
+
+.feel-container .pink-card .card-title {
+  background-color: #c00e62;
+  color: #FFFFFF;
+}
+
+.feel-container .yellow-card .card-title {
+  background-color: #d0770f;
+  color: #FFFFFF;
+}
+
+.feel-container .card-text {
+  text-align: justify !important;
+  padding: 1.5vh 1vw 1.5vh 1vw;
+}
+
+.feel-container .btn {
+  border-radius: 10px;
+  padding: 0.7vh 1vw 0.7vh 1vw;
+  width: 60%;
+  font-size: large;
+}
+
+.feel-container .btn-purple {
+  border: #591C98 solid 3px;
+}
+
+.feel-container .btn-pink {
+  border: #c00e62 solid 3px;
+}
+
+.feel-container .btn-yellow {
+  border: #d0770f solid 3px;
+}
+
+.feel-container .card-footer {
+  background-color: white;
 }
 
 .program-button {
@@ -11156,5 +11216,24 @@ body {
 
 .btn-bar a {
   border-radius: 0 !important;
+  font-size: large !important;
+  font-weight: bold !important;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+}
+
+.snf-caption {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3.5vh;
+}
+
+.snf-caption h1 {
+  color: #591C98 !important;
+  font-weight: bolder !important;
+}
+
+.snf-caption h2 {
+  font-weight: bold !important;
+  color: black !important;
 }
 
