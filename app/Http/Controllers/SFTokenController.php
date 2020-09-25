@@ -9,20 +9,20 @@ use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
 class SFTokenController extends Controller {
 
-    public function get($username) {
-        $current_token = session('SFAPI_TOKEN');
-        if ($current_token && $this -> is_token_valid()) {
-            return session('SFAPI_TOKEN')['token'];
+    public function get($username, $name) {
+        $current_token = session($name.'_TOKEN');
+        if ($current_token && $this -> is_token_valid($name.'_TOKEN')) {
+            return session($name.'_TOKEN')['token'];
         }
-        return $this -> fetch_token($username)['token'];
+        return $this -> fetch_token($username, $name)['token'];
     }
 
-    private function is_token_valid() {
-        $token = session('SFAPI_TOKEN');
+    private function is_token_valid($name) {
+        $token = session($name.'_TOKEN');
         return !$token["expiration"] -> isPast();
     }
 
-    private function fetch_token($username) {
+    private function fetch_token($username, $name) {
         $host = env('SFAPI_HOST');
         $operation = "getchallenge";
 
@@ -40,7 +40,7 @@ class SFTokenController extends Controller {
                 "creation" => Carbon ::now(),
                 "expiration" => Carbon ::now() -> addMinutes(5)
             ];
-            session('SFAPI_TOKEN', $formattedToken);
+            session($name.'_TOKEN', $formattedToken);
             return $formattedToken;
 
         }
