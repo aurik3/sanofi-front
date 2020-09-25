@@ -6,7 +6,7 @@
         <x-carousel />
         <x-button-bar type="landing" />
         <x-descriptor type="about"/>
-        <x-feel-cards />
+        <x-feel-cards type="landing" title="¿Cómo quieres sentirte hoy?"/>
         <x-brand-list />
     </div>
 @endsection
