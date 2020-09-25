@@ -10910,9 +10910,10 @@ a.text-dark:focus {
 }
 
 .btn-login {
-  height: 5vh;
-  font-size: large;
+  font-size: x-large;
   color: #D0780D;
+  text-align: center !important;
+  justify-content: center !important;
   margin-right: 2vw;
 }
 
@@ -11149,6 +11150,7 @@ body {
   justify-content: center !important;
   margin-top: 5vh !important;
   margin-bottom: 3.5vh !important;
+  padding-bottom: 3.5vh !important;
 }
 
 .feel-container {
