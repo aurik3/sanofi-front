@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SFTestController;
+use App\Http\Controllers\SFSessionController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +23,13 @@ Route::get('/', function () {
    return view('landing');
 }) -> name('landing');
 
+Route::get('/verif-notice', function () {
+    return redirect(\route('landing'));
+}) -> name('verification.notice');
+
 Route::get('/home', function () {
     return view('home');
-}) -> name('home');
+}) -> name('home') -> middleware('auth');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::post('/m-logout', [SFSessionController::class, 'logout'])
+    ->name('m-logout');
