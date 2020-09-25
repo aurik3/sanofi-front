@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class SFSessionController extends Controller {
 
-    public function login($username, $password) {
+    public function login($username, $password, $name) {
 
-        $response = $this -> fetch_session($username, $password);
+        $response = $this -> fetch_session($username, $password, $name);
         if ($response["success"] == true) {
             $session_name = $response["result"]["sessionName"];
-            session('SFAPI_SESSION', $session_name);
+            session($name . '_SESSION', $session_name);
             return $session_name;
         }
         return false;
@@ -20,14 +21,16 @@ class SFSessionController extends Controller {
     }
 
     public function logout() {
-        return $this -> destroy_session();
+        Auth::logout();
+        $this -> destroy_session('USER_SESSION');
+        return redirect(route('landing'));
     }
 
-    private function fetch_session($username, $password) {
+    private function fetch_session($username, $password, $name) {
         $token_controller = new SFTokenController();
         $host = env('SFAPI_HOST');
         $operation = 'login';
-        $token = md5($token_controller -> get($username));
+        $token = md5($token_controller -> get($username, $name));
 
         return Http ::asForm() -> post($host, [
             'operation' => $operation,
@@ -37,8 +40,8 @@ class SFSessionController extends Controller {
         ]) -> json();
     }
 
-    private function destroy_session() {
-        $session_name = session('SFAPI_SESSION');
+    private function destroy_session($name) {
+        $session_name = session($name . '_SESSION');
         if (!is_null($session_name)) {
             $host = env('SFAPI_HOST');
             $operation = 'logout';
