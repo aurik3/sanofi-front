@@ -1,6 +1,7 @@
 @extends('layouts.base')
 @section('page_title', 'Login')
 @section('hide_login', 'true')
+@section('hide_logout', 'true')
 @section('body_content')
     <div class="container d-flex h-100" style="height: 100%">
         <div class="container text-center justify-content-center login-container">
@@ -12,7 +13,17 @@
                     </h1>
                 </div>
             </div>
-            <form action="" method="post">
+            @if($errors -> any())
+                <div class="row justify-content-center text-center">
+                    <div class="alert alert-danger alert-dismissible fade show text-center" style="width: 50%; padding-top: 20px; margin-left: 4.5vw; padding-left: 3vw"
+                         role="alert">
+                        <h5> <i class="fas fa-exclamation-triangle"></i> &nbsp; Las credencias introducidas no son válidas. </h5>
+                    </div>
+                </div>
+                <br/>
+            @endif
+            <form action="{{ route('login') }}" method="post">
+                @csrf
                 <div class="row justify-content-center">
                     <div class="col-1 d-none d-lg-block">
                         <i class="fal fa-user fa-3x text-purple login-icon"></i>
