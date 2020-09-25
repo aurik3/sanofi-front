@@ -11,7 +11,7 @@ class SFTestController extends Controller {
         $session_controller = new SFSessionController();
         $element_controller = new SFElementController();
 
-        $session = $session_controller -> login(env('SFAPI_USERNAME'), env('SFAPI_PASSWORD'));
+        $session = $session_controller -> login(env('SFAPI_USERNAME'), env('SFAPI_PASSWORD'), 'SFAPI');
         $result = $element_controller -> list_elements($session);
 
         return response($result, 200) -> header('Content-Type', 'text/json');
@@ -23,7 +23,7 @@ class SFTestController extends Controller {
         $session_controller = new SFSessionController();
         $element_controller = new SFElementController();
 
-        $session = $session_controller -> login(env('SFAPI_USERNAME'), env('SFAPI_PASSWORD'));
+        $session = $session_controller -> login(env('SFAPI_USERNAME'), env('SFAPI_PASSWORD'), 'SFAPI');
         $result = $element_controller -> describe_element($session, $module);
 
         return response($result, 200) -> header('Content-Type', 'text/json');
