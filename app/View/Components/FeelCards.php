@@ -9,13 +9,19 @@ class FeelCards extends Component {
     public $card1;
     public $card2;
     public $card3;
+    public $color1;
+    public $color2;
+    public $color3;
+    public $title;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct() {
+    public function __construct($type, $title) {
+
+        $this ->  title = $title;
 
         $this -> card1 = [
             'image' => asset('img/stk1.png'),
@@ -37,6 +43,20 @@ class FeelCards extends Component {
             'description' => 'Lorem ipsum dolor it asimet, consecteur adispiscing elit, sed diam nonummy nibh eusimod linciduml il laoreet magna aliquam erat volutpat.',
             'href' => ''
         ];
+
+        switch ($type) {
+            case "home":
+                $this -> color1 = "green";
+                $this -> color2 = "blue";
+                $this -> color3 = "green";
+            break;
+            default:
+                $this -> color1 = "purple";
+                $this -> color2 = "pink";
+                $this -> color3 = "yellow";
+            break;
+        }
+
     }
 
     /**

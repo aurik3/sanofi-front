@@ -10922,6 +10922,14 @@ a.text-dark:focus {
   background-color: #D0780D;
 }
 
+.text-green {
+  color: #02857b;
+}
+
+.text-blue {
+  color: #46569b;
+}
+
 .text-purple {
   color: #591C98 !important;
 }
@@ -11155,6 +11163,7 @@ body {
 
 .feel-container {
   margin-bottom: 3.5vh !important;
+  margin-top: 3vh !important;
   text-align: center !important;
 }
 
@@ -11180,6 +11189,16 @@ body {
   color: #FFFFFF;
 }
 
+.feel-container .blue-card .card-title {
+  background-color: #46569b;
+  color: #FFFFFF;
+}
+
+.feel-container .green-card .card-title {
+  background-color: #02857b;
+  color: #FFFFFF;
+}
+
 .feel-container .card-text {
   text-align: justify !important;
   padding: 1.5vh 1vw 1.5vh 1vw;
@@ -11202,6 +11221,14 @@ body {
 
 .feel-container .btn-yellow {
   border: #d0770f solid 3px;
+}
+
+.feel-container .btn-blue {
+  border: #46569b solid 3px;
+}
+
+.feel-container .btn-green {
+  border: #02857b solid 3px;
 }
 
 .feel-container .card-footer {
@@ -11237,5 +11264,62 @@ body {
 .snf-caption h2 {
   font-weight: bold !important;
   color: black !important;
+}
+
+.indicator-container {
+  border: #46569b solid 3px;
+  padding: 2vh 2vw;
+}
+
+.indicator-container h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-align: center !important;
+}
+
+.blue-stroke {
+  stroke: #46569b;
+}
+
+.green-stroke {
+  stroke: #02857b;
+  fill: #02857b;
+  background-color: #02857b;
+}
+
+.purple-stroke {
+  stroke: #591C98;
+  fill: #591C98;
+  background-color: #591C98;
+}
+
+.pink-stroke {
+  stroke: #c00e62;
+  fill: #c00e62;
+  background-color: #c00e62;
+}
+
+.yellow-stroke {
+  stroke: #d0770f;
+}
+
+text.ct-label {
+  fill: white !important;
+}
+
+.dot {
+  height: 1.5vh;
+  width: 1.5vh;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 0.4vh !important;
+}
+
+.dot-text {
+  font-size: 1.5vh !important;
 }
 

@@ -21,6 +21,14 @@
     background-color: #D0780D;
 }
 
+.text-green {
+  color: rgb(2, 133, 123);
+}
+
+.text-blue {
+    color: rgb(70, 86, 155);
+}
+
 .text-purple {
     color: #591C98 !important;
 }
@@ -253,6 +261,7 @@ body {
 
 .feel-container {
     margin-bottom: 3.5vh !important;
+    margin-top: 3vh !important;
     text-align: center !important;
 }
 
@@ -278,6 +287,16 @@ body {
     color: #FFFFFF;
 }
 
+.feel-container .blue-card .card-title {
+    background-color: rgb(70, 86, 155);
+    color: #FFFFFF;
+}
+
+.feel-container .green-card .card-title {
+    background-color: rgb(2, 133, 123);
+    color: #FFFFFF;
+}
+
 .feel-container .card-text {
     text-align: justify !important;
     padding: 1.5vh 1vw 1.5vh 1vw
@@ -300,6 +319,14 @@ body {
 
 .feel-container .btn-yellow {
     border: rgb(208, 119, 15) solid 3px;
+}
+
+.feel-container .btn-blue {
+    border: rgb(70, 86, 155) solid 3px;
+}
+
+.feel-container .btn-green {
+    border: rgb(2, 133, 123) solid 3px;
 }
 
 .feel-container .card-footer {
@@ -335,4 +362,55 @@ body {
 .snf-caption h2 {
     font-weight: bold !important;
     color: black !important;
+}
+
+.indicator-container {
+    border: rgb(70, 86, 155) solid 3px;
+    padding: 2vh 2vw;
+}
+
+.indicator-container h1, h2, h3, h4, h5, h6, p {
+    text-align: center  !important;
+}
+
+.blue-stroke {
+    stroke: rgb(70, 86, 155);
+}
+
+.green-stroke {
+    stroke: rgb(2, 133, 123);
+    fill: rgb(2, 133, 123);
+    background-color: rgb(2, 133, 123);
+}
+
+.purple-stroke {
+    stroke: #591C98;
+    fill: #591C98;
+    background-color: #591C98;
+}
+
+.pink-stroke {
+    stroke: rgb(192, 14, 98);
+    fill: rgb(192, 14, 98);
+    background-color: rgb(192, 14, 98);
+}
+
+.yellow-stroke {
+    stroke: rgb(208, 119, 15);
+}
+
+text.ct-label {
+    fill: white !important;
+}
+
+.dot {
+    height: 1.5vh;
+    width: 1.5vh;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 0.4vh !important;
+}
+
+.dot-text {
+    font-size: 1.5vh !important;
 }
