@@ -126,5 +126,7 @@
     <orderEntry type="library" name="720bef5612" level="application" />
     <orderEntry type="library" name="chartist" level="application" />
     <orderEntry type="library" name="720bef5612" level="application" />
+    <orderEntry type="library" name="@chartisan/echarts" level="application" />
+    <orderEntry type="library" name="echarts" level="application" />
   </component>
 </module>

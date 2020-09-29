@@ -162,7 +162,7 @@
 }
 
 .btn-blue:hover {
-    color: rgb(70, 86, 155);
+        color: rgb(70, 86, 155);
     background-color: #FFFFFF;
     border-color: #FFFFFF;
     border-bottom: rgb(70, 86, 155) solid 3px;
@@ -203,6 +203,7 @@ body {
     width: 100%;
     height: 15vh;
     background-color: #f5f5f5;
+    margin-top: 10vh !important;
 }
 
 .footer-purple {
@@ -260,8 +261,9 @@ body {
 }
 
 .feel-container {
-    margin-bottom: 3.5vh !important;
-    margin-top: 3vh !important;
+    margin-bottom: 5vh !important;
+    margin-top: 1vh !important;
+    padding: 0 1vw !important;
     text-align: center !important;
 }
 
@@ -366,7 +368,8 @@ body {
 
 .indicator-container {
     border: rgb(70, 86, 155) solid 3px;
-    padding: 2vh 2vw;
+    padding: 5vh 5vw;
+    margin: 4vh 0;
 }
 
 .indicator-container h1, h2, h3, h4, h5, h6, p {
@@ -413,4 +416,44 @@ text.ct-label {
 
 .dot-text {
     font-size: 1.5vh !important;
+}
+
+.news-container {
+    position: relative;
+    height: 20vh !important;
+    overflow: hidden !important;
+}
+
+.news-container img {
+    display: block;
+    object-fit: cover !important;
+}
+
+.news-container .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000;
+}
+
+.news-container:hover .overlay {
+    opacity: 0.7;
+}
+
+.news-container .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
