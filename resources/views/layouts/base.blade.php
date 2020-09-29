@@ -15,7 +15,8 @@
         <x-base-footer />
         <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
         <script src="https://kit.fontawesome.com/720bef5612.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+        <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
         @yield('custom_scripts')
     </body>
 </html>
