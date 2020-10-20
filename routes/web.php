@@ -33,3 +33,7 @@ Route::get('/home', function () {
 
 Route::post('/m-logout', [SFSessionController::class, 'logout'])
     ->name('m-logout');
+
+Route::get('/test/microlearning', function () {
+    return view('microlearning.test');
+});
