@@ -13,10 +13,16 @@ class SFSessionController extends Controller {
         $response = $this -> fetch_session($username, $password, $name);
         if ($response["success"] == true) {
             $session_name = $response["result"]["sessionName"];
-            session($name . '_SESSION', $session_name);
+            session([$name . '_SESSION' => $session_name]);
             return $session_name;
         }
         return false;
+
+    }
+
+    public function current() {
+
+        return session('CLIENT_SESSION');
 
     }
 
@@ -50,6 +56,8 @@ class SFSessionController extends Controller {
                 'operation' => $operation,
                 'sessionName' => $session_name
             ]) -> json();
+
+            session([$name . '_SESSION' => null]);
 
             return $response["success"];
 
