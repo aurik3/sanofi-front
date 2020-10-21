@@ -10,8 +10,8 @@ use Illuminate\View\Component;
 class MicroForm extends Component {
 
     public $api_status;
-    public $field_data;
-    public $label;
+    public string $field_data;
+    public string $label;
 
     /**
      * Create a new component instance.
@@ -52,19 +52,38 @@ class MicroForm extends Component {
             }
 
             $blade_fields = array();
-
             foreach($field_queue as $field) {
                 array_push($blade_fields, self::constructType($field));
             }
 
-            $this -> field_data = $blade_fields;
-
-            $rendered_fields = '';
+            $rendered_fields = array();
             foreach($blade_fields as $field) {
-                $rendered_fields .= self::renderField($field);
+                array_push($rendered_fields, self::renderField($field));
             }
 
-            $this -> field_data = $rendered_fields;
+            $render_count = sizeof($rendered_fields);
+            if ($render_count % 2 != 0) {
+                $render_count++;
+                $ix_row = $render_count / 2;
+                array_push($rendered_fields, '');
+            } else {
+                $ix_row = $render_count / 2;
+            }
+
+            $render_string = '<div class="card"><div class="card-header">'.$label.'</div><div class="card-body">';
+
+            $ix1_count = 0;
+            $ix2_count = 1;
+
+            for ($i = 0; $i < $ix_row; $i++) {
+                $render_string .= '<div class="row"><div class="col-md-6 col-sm-12">'.$rendered_fields[$ix1_count].'</div><div class="col-md-6 col-sm-12">'.$rendered_fields[$ix2_count].'</div></div>';
+                $ix1_count += 2;
+                $ix2_count += 2;
+            }
+
+            $render_string .= '</div></div>';
+
+            $this -> field_data = $render_string;
 
         }
 
@@ -177,20 +196,20 @@ class MicroForm extends Component {
 
             case 'select':
                 $optval = self::renderOptions($field);
-                return '<div class="form-group row"><label class="col-sm-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-sm-6"><select class="selectpicker show-tick form-control" data-live-search="true" id="'.$nm.'" value="'.$df.'" '.$mn.'>'.$optval.'</select></div>'.'</div>';
+                return '<div class="form-group row"><label class="col-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-6"><select class="selectpicker show-tick form-control" data-live-search="true" id="'.$nm.'" value="'.$df.'" '.$mn.'>'.$optval.'</select></div>'.'</div>';
 
             case 'multiselect':
                 $optval = self::renderOptions($field);
-                return '<div class="form-group row"><label class="col-sm-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-sm-6"><select class="selectpicker form-control" data-live-search="true" multiple id="'.$nm.'" value="'.$df.'" '.$mn.'>'.$optval.'</select></div>'.'</div>';
+                return '<div class="form-group row"><label class="col-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-6"><select class="selectpicker form-control" data-live-search="true" multiple id="'.$nm.'" value="'.$df.'" '.$mn.'>'.$optval.'</select></div>'.'</div>';
 
             case 'text':
-                return '<div class="form-group row"><label class="col-sm-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-sm-6"><input type="text" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
+                return '<div class="form-group row"><label class="col-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-6"><input type="text" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
 
             case 'number':
-                return '<div class="form-group row"><label class="col-sm-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-sm-6"><input type="number" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
+                return '<div class="form-group row"><label class="col-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-6"><input type="number" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
 
             case 'date':
-                return '<div class="form-group row"><label class="col-sm-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-sm-6"><input type="date" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
+                return '<div class="form-group row"><label class="col-6 col-form-label text-right" for="'.$nm.'">'.$lab.'</label><div class="col-6"><input type="date" class="form-control" id="'.$nm.'" value="'.$df.'" '.$mn.'></div>'.'</div>';
 
             default:
                 return '';
