@@ -28,7 +28,7 @@ class SFSessionController extends Controller {
 
     public function logout() {
         Auth::logout();
-        $this -> destroy_session('USER_SESSION');
+        $this -> destroy_session('CLIENT');
         return redirect(route('landing'));
     }
 
