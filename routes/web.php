@@ -36,4 +36,6 @@ Route::post('/m-logout', [SFSessionController::class, 'logout'])
 
 Route::get('/test/microlearning', function () {
     return view('microlearning.test');
-});
+}) -> middleware('auth');
+
+Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');

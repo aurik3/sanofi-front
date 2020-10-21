@@ -30,4 +30,13 @@ class SFTestController extends Controller {
 
     }
 
+    public function build_component_map(Request $request) {
+
+        $label = $request -> get('label');
+        $fields = $request -> get('fields');
+
+        return view('microlearning.sub-test') -> with(['label' => $label, 'fields' => $fields]);
+
+    }
+
 }
