@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SFTestController extends Controller {
@@ -36,6 +37,19 @@ class SFTestController extends Controller {
         $fields = $request -> get('fields');
 
         return view('microlearning.sub-test') -> with(['label' => $label, 'fields' => $fields]);
+
+    }
+
+    public function view_events(Request $request) {
+
+        $query_controller = new SFQueryController();
+        $today = Carbon::now();
+        $tomorrow = $today -> addDay();
+
+
+        $result = $query_controller -> stateful_basic('SELECT * FROM Events WHERE date_start >= \''.$today -> format('Y-m-d').'\' AND date_start <= \''.$tomorrow -> format('Y-m-d').'\';');
+
+        return response($result, 200) -> header('Content-Type', 'text/json');
 
     }
 
