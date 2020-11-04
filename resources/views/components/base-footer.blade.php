@@ -25,13 +25,13 @@
                         </span>
                     </div>
                     <div class="row footer-mid-row" style="line-height: 5vh">
-                        <a href="#" class="footer-icon">
-                            <i class="fab fa-facebook fa-2x"></i>
+                        <a href="https://www.youtube.com/user/sanofiaventisTVen" class="footer-icon">
+                            <i class="fab fa-youtube fa-2x"></i>
                         </a>
-                        <a href="#" class="footer-icon">
+                        <a href="https://www.instagram.com/sanofi/" class="footer-icon">
                             <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a href="#" class="footer-icon">
+                        <a href="https://twitter.com/sanofi" class="footer-icon">
                             <i class="fab fa-twitter fa-2x"></i>
                         </a>
                     </div>

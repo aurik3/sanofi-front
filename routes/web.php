@@ -19,6 +19,12 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 Route::get('/test/elements', [SFTestController::class, 'lookup_frontend_modules']);
 Route::get('/test/elements/{module}', [SFTestController::class, 'lookup_specific_module']);
 
+Route::get('/test/microlearning', function () {
+    return view('microlearning.test');
+}) -> middleware('auth');
+
+Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');
+
 Route::get('/', function () {
    return view('landing');
 }) -> name('landing');
@@ -34,8 +40,10 @@ Route::get('/home', function () {
 Route::post('/m-logout', [SFSessionController::class, 'logout'])
     ->name('m-logout');
 
-Route::get('/test/microlearning', function () {
-    return view('microlearning.test');
-}) -> middleware('auth');
+Route::get('/vital', function () {
+    return view('programs.vital');
+}) -> name('prog.vital');
 
-Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');
+Route::get('/amigos', function () {
+    return view('programs.amigos');
+}) -> name('prog.amigos');

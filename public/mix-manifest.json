@@ -1,16 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/img/hslid1.jpg": "/img/hslid1.jpg",
-    "/img/hslid2.jpg": "/img/hslid2.jpg",
-    "/img/prog1.svg": "/img/prog1.svg",
-    "/img/prog2.svg": "/img/prog2.svg",
-    "/img/prog3.svg": "/img/prog3.svg",
-    "/img/prog4.svg": "/img/prog4.svg",
-    "/img/prog5.svg": "/img/prog5.svg",
-    "/img/sanofi-color.svg": "/img/sanofi-color.svg",
-    "/img/sanofi-white.svg": "/img/sanofi-white.svg",
-    "/img/stk1.png": "/img/stk1.png",
-    "/img/stk2.png": "/img/stk2.png",
-    "/img/stk3.png": "/img/stk3.png"
+    "/css/app.css": "/css/app.css"
 }

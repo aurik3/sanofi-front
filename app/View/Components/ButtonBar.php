@@ -20,19 +20,14 @@ class ButtonBar extends Component
             case 'landing':
                 $this -> buttons = [
                     [
-                      'href' => "#",
+                      'href' => route('prog.vital'),
                       'color' => 'purple',
-                      'description' => 'TITLE'
+                      'description' => 'Programa Vital'
                     ],
                     [
-                        'href' => "#",
+                        'href' => route('prog.amigos'),
                         'color' => 'pink',
-                        'description' => 'TITLE'
-                    ],
-                    [
-                        'href' => "#",
-                        'color' => 'yellow',
-                        'description' => 'TITLE'
+                        'description' => 'Amigos de Corazón'
                     ]
                 ];
             break;

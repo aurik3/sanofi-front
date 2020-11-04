@@ -15,13 +15,32 @@ class Carousel extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($type = 'default')
     {
-        $this -> images = [asset('img/hslid1.jpg'), asset('img/hslid2.jpg')];
-        $this -> captions = [
-            '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>',
-            '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>'
-        ];
+
+        switch ($type) {
+
+            case 'vital':
+                $this -> images = [asset('img/progs/vital/slide.png')];
+                $this -> captions = ['<h1>Programa Vital</h1>',];
+            break;
+
+            case 'amigos':
+                $this -> images = [asset('img/progs/amigos/slide.png')];
+                $this -> captions = ['<h1>Amigos de Corazón</h1>',];
+                break;
+
+            default:
+                $this -> images = [asset('img/hslid1.jpg'), asset('img/hslid2.jpg')];
+                $this -> captions = [
+                    '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>',
+                    '<h1>Title</h1><br/><h2>Lorem ipsum dolor sit amet consecteur</h2>'
+                ];
+            break;
+
+        }
+
+
     }
 
     /**
