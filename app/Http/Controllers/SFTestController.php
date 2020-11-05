@@ -42,12 +42,40 @@ class SFTestController extends Controller {
 
     public function view_events(Request $request) {
 
+        $session_controller = new SFSessionController();
         $query_controller = new SFQueryController();
+
+        $uid = $session_controller -> current_Id();
         $today = Carbon::now();
-        $tomorrow = $today -> addDay();
+        $next_week = $today -> addWeek();
 
+        $result = $query_controller -> stateful_basic('SELECT * FROM Events WHERE assigned_user_id = \''.$uid.'\' AND date_start >= \''.$today -> format('Y-m-d').'\' AND date_start <= \''.$next_week -> format('Y-m-d').'\' LIMIT 3;');
 
-        $result = $query_controller -> stateful_basic('SELECT * FROM Events WHERE date_start >= \''.$today -> format('Y-m-d').'\' AND date_start <= \''.$tomorrow -> format('Y-m-d').'\';');
+        return response($result, 200) -> header('Content-Type', 'text/json');
+
+    }
+
+    public function view_stats(Request $request) {
+
+        $session_controller = new SFSessionController();
+        $query_controller = new SFQueryController();
+
+        $uid = $session_controller -> current_Id();
+
+        $planned = $query_controller -> stateful_basic('SELECT COUNT(*) FROM Events WHERE assigned_user_id = \''.$uid.'\' AND eventstatus = \''.'Planned'.'\';')[0] -> count;
+        $authorized = $query_controller -> stateful_basic('SELECT COUNT(*) FROM Events WHERE assigned_user_id = \''.$uid.'\' AND eventstatus = \''.'Autorizada'.'\';')[0] -> count;
+
+        $amounts = [$planned, $authorized];
+
+        return response(json_encode($amounts), 200) -> header('Content-Type', 'text/json');
+
+    }
+
+    public function view_users(Request $request) {
+
+        $query_controller = new SFQueryController();
+
+        $result = $query_controller -> admin_basic('SELECT * FROM Users;');
 
         return response($result, 200) -> header('Content-Type', 'text/json');
 

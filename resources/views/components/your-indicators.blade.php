@@ -16,7 +16,7 @@
                     <span class="dot purple-stroke"></span>
                 </div>
                 <div class="col-4">
-                    <span class="dot-text">Realizadas</span>
+                    <span class="dot-text">Planeadas</span>
                 </div>
             </div>
             <div class="row justify-content-center align-content-center">
@@ -24,7 +24,7 @@
                     <span class="dot pink-stroke"></span>
                 </div>
                 <div class="col-4">
-                    <span class="dot-text">Agendadas</span>
+                    <span class="dot-text">Autorizadas</span>
                 </div>
             </div>
             <br/>

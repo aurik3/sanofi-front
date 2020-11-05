@@ -13,7 +13,9 @@ class SFSessionController extends Controller {
         $response = $this -> fetch_session($username, $password, $name);
         if ($response["success"] == true) {
             $session_name = $response["result"]["sessionName"];
+            $user_id = $response["result"]["userId"];
             session([$name . '_SESSION' => $session_name]);
+            session([$name . '_UID' => $user_id]);
             return $session_name;
         }
         return false;
@@ -23,6 +25,12 @@ class SFSessionController extends Controller {
     public function current() {
 
         return session('CLIENT_SESSION');
+
+    }
+
+    public function current_Id() {
+
+        return session('CLIENT_UID');
 
     }
 

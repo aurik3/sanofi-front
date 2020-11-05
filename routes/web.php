@@ -23,7 +23,8 @@ Route::get('/test/microlearning', function () {
 }) -> middleware('auth');
 Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');
 Route::get('/test/events', [SFTestController::class, 'view_events']) -> middleware('auth');
-
+Route::get('/test/evstats', [SFTestController::class, 'view_stats']) -> middleware('auth');
+Route::get('/test/users', [SFTestController::class, 'view_users']);
 
 Route::get('/', function () {
    return view('landing');
