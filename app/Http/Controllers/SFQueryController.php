@@ -5,8 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * A simple Querying controller that allows for simple authenticated (Both admin and generic) querying to
+ * Sanofi's database through the use of stored sessions.
+ *
+ * Class SFQueryController
+ * @package App\Http\Controllers
+ */
+
 class SFQueryController extends Controller {
 
+    /**
+     * Executes the supplied query using the currently authenticated user's credentials in Sanofi's database.
+     * @param $query
+     * @return mixed
+     * @throws \Exception
+     */
     public function stateful_basic($query) {
 
         $session_controller = new SFSessionController();
@@ -31,6 +45,12 @@ class SFQueryController extends Controller {
 
     }
 
+    /**
+     * Executes the supplied query using the application's admin credentials in Sanofi's database.
+     * @param $query
+     * @return mixed
+     * @throws \Exception
+     */
     public function admin_basic($query) {
 
         $session_controller = new SFSessionController();

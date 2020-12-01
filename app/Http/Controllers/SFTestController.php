@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+/**
+ * A controller that allows for easy test-data fetching and verification.
+ * Class SFTestController
+ * @package App\Http\Controllers
+ */
 class SFTestController extends Controller {
 
+    /**
+     * Finds all the modules fetchable by Sanofi's API.
+     * @param Request $request
+     * @return mixed
+     */
     public function lookup_frontend_modules(Request $request) {
 
         $session_controller = new SFSessionController();
@@ -19,6 +29,12 @@ class SFTestController extends Controller {
 
     }
 
+    /**
+     * Finds the supplied module's information in Sanofi's API.
+     * @param Request $request
+     * @param $module
+     * @return mixed
+     */
     public function lookup_specific_module(Request $request, $module) {
 
         $session_controller = new SFSessionController();
@@ -31,6 +47,11 @@ class SFTestController extends Controller {
 
     }
 
+    /**
+     * Creates a Microlearning component map for visualization purposes with the supplied values.
+     * @param Request $request
+     * @return mixed
+     */
     public function build_component_map(Request $request) {
 
         $label = $request -> get('label');
@@ -40,6 +61,12 @@ class SFTestController extends Controller {
 
     }
 
+    /**
+     * Displays currently allocated events for the currently authenticated user.
+     * @param Request $request
+     * @return mixed
+     * @throws \Exception
+     */
     public function view_events(Request $request) {
 
         $session_controller = new SFSessionController();
@@ -55,6 +82,12 @@ class SFTestController extends Controller {
 
     }
 
+    /**
+     * Displays currently stored statistics for the currently authenticated user.
+     * @param Request $request
+     * @return mixed
+     * @throws \Exception
+     */
     public function view_stats(Request $request) {
 
         $session_controller = new SFSessionController();
@@ -71,6 +104,12 @@ class SFTestController extends Controller {
 
     }
 
+    /**
+     * Displays currently created users with their blowfish password hash.
+     * @param Request $request
+     * @return mixed
+     * @throws \Exception
+     */
     public function view_users(Request $request) {
 
         $query_controller = new SFQueryController();

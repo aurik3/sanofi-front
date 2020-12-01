@@ -16,15 +16,19 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
+// -------- TEST ROUTES, COMMENT OUT IN PRODUCTION ----------------------------------------------------------
+
 Route::get('/test/elements', [SFTestController::class, 'lookup_frontend_modules']);
 Route::get('/test/elements/{module}', [SFTestController::class, 'lookup_specific_module']);
-Route::get('/test/microlearning', function () {
-    return view('microlearning.test');
-}) -> middleware('auth');
-Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');
 Route::get('/test/events', [SFTestController::class, 'view_events']) -> middleware('auth');
 Route::get('/test/evstats', [SFTestController::class, 'view_stats']) -> middleware('auth');
 Route::get('/test/users', [SFTestController::class, 'view_users']);
+Route::post('/test/microlearning', [SFTestController::class, 'build_component_map']) -> name('microtest');
+Route::get('/test/microlearning', function () {
+    return view('microlearning.test');
+}) -> middleware('auth');
+
+// --------------- PRODUCTION ROUTES, DO NOT COMMENT -------------------------------------------------------
 
 Route::get('/', function () {
    return view('landing');

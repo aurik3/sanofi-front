@@ -20,6 +20,8 @@ class VisitsChart extends BaseChart
      * Handles the HTTP request for the given chart.
      * It must always return an instance of Chartisans
      * and never a string or an array.
+     *
+     * Uses the basic stateful querying engine to fetch the relevant information.
      */
     public function handler(Request $request): Chartisan {
 

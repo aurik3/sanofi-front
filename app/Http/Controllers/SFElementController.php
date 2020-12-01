@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
+/**
+ * An API Element fetch controller for element description and listing.
+ *
+ * Class SFElementController
+ * @package App\Http\Controllers
+ */
+
 class SFElementController extends Controller {
 
     public function list_elements($sessionName) {
