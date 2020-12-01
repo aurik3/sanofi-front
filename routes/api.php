@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SFTestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
